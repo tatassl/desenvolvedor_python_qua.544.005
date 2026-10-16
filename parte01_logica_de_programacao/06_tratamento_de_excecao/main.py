@@ -1,6 +1,6 @@
 # tratamento de exceção 
 try:
-    nome = input("Infome o seu nome: ").strip().title()
+    nome = input("Informe o seu nome: ").strip().title()
     idade = int(input("Informe sua idade: "))
 
     print(f"Nome do usuário: {nome}")
