@@ -1,60 +1,97 @@
 import os
-os. system("cls" if os.name == "nt" else "clear")
 
-print("{'-' * 20} BEM-VINDO AO CINEFLA! {'-' * 20}")
+os.system("cls" if os.name == "nt" else "clear")
 
-nome = input("{'-' * 20} Infome o seu NOME completo: ")
-idade = input("{'-' * 20} Infome sua IDADE: ")
-lista = int(input("{'-' * 20} Se deseja VIZUALIZAR FILMES EM CARTAZ e suas respectivas salas e classificações, digite '1'. Qualquer outo valor para encerrar: ")).strip().lower() 
-classificação = idade
+print("-" * 20, "BEM-VINDO AO CINEFLA!", "-" * 20)
 
-while True: 
-    print("{'-' * 20} FILMES EM CARTAZ: " \
-        "1- 'A sopa de letrinha'." \
-        "CLASSIFICAÇÃO: 1+ " \
-        "SALA DE CINEMA: 01" \
-        "{'-' * 40}" \
-        "2- 'HOMEM ARANHA- VOLTA TOTAL'" \
-        "CLASSIFICAÇÃO: 16+" \
-        "SALA DE CINEMA: 02" \
-        "{'-' * 40}" \
-        "3- 'VIDA DE SEREIA' " \
-        "CLASSIFICAÇÃO: 1+" \
-        "SALA DE CINEMA: 03" \
-        "{'-' * 40}" \
-        "4- 'NÃO PROCURE O NEMO'" \
-        "CLASSIFICAÇÃO: 18+" \
-        "SALA DE CINEMA: 04" \
-        "{'-' * 40}" \
-        "5- 'NEM VELOZES E NEM FURIOSOS' " \
-        "CLASSIFICAÇÃO: 14+" \
-        "SALA DE CINEMA: 05" 
-        "{'-' * 40}")
-    
+nome = input("Informe seu nome completo: ").strip()
+
+while True:
     try:
-        sala = int(input("Qual é a sala escolhida? "))
+        idade = int(input("Informe sua idade: "))
 
-        if {sala} == 01 and {classificação} == 1:
-            print("Seu filme é 'A sopa de letrinha'.")
-        elif {sala} == 02 and {classificação} == 16:
-            print("Seu filme é 'HOMEM ARANHA- VOLTA TOTAL'")
-        elif {sala} == 03 and {classificação} == 1:
-            print(" Seu filme é 'VIDA DE SEREIA'")
-        elif {sala} == 04 and {classificação} == 18:
-            print(" Seu filme é 'NÃO PROCURE O NEMO'")
-        elif {sala} == 05 and {classificação} ==14:
-            print("Seu filme é 'NEM VELOZES E NEM FURIOSOS'")
+        if idade < 0:
+            print("A idade não pode ser negativa.")
         else:
-            print("OPSS.. seus dados não estão de acordo com os requisitos para vizualização do filme!")
-    except Exception as e:
-        print(f"Não foi possível realizar a ação. {e}.")
+            break
 
-print("Seu filme é na sala {sala}! BOM FILME")
+    except ValueError:
+        print("Digite uma idade válida usando números inteiros.")
 
+filmes = {
+    1: {
+        "nome": "A Sopa de Letrinha",
+        "classificacao": 1,
+        "sala": 01
+    },
+    2: {
+        "nome": "Homem-Aranha - Volta Total",
+        "classificacao": 16,
+        "sala": 02
+    },
+    3: {
+        "nome": "Vida de Sereia",
+        "classificacao": 1,
+        "sala": 03
+    },
+    4: {
+        "nome": "Não Procure o Nemo",
+        "classificacao": 18,
+        "sala": 04
+    },
+    5: {
+        "nome": "Nem Velozes e Nem Furiosos",
+        "classificacao": 14,
+        "sala": 05
+    }
+}
 
+print(f"\nOlá, {nome}! Seja bem-vindo(a) ao CINEFLA!")
+print("\n========== FILMES EM CARTAZ ==========")
 
+for numero, filme in filmes.items():
+    print(f"\n{numero} - {filme['nome']}")
+    print(f"Classificação indicativa: {filme['classificacao']}+")
+    print(f"Sala: {filme['sala']}")
+    print("-" * 40)
 
+while True:
+    try:
+        escolha = int(input(
+            "\nDigite o número do filme desejado "
+            "ou 0 para sair: "
+        ))
+
+        if escolha == 0:
+            print(f"Até a próxima, {nome}!")
+            break
+
+        if escolha not in filmes:
+            print("Opção inválida. Escolha um filme de 1 a 5.")
+            continue
+
+        filme_escolhido = filmes[escolha]
 
     
+        if idade >= filme_escolhido["classificacao"]:
+            print("\nCompra autorizada!")
+            print(f"Cliente: {nome}")
+            print(f"Filme: {filme_escolhido['nome']}")
+            print(f"Sala: {filme_escolhido['sala']}")
+            print("Compra concluída com sucesso!")
+            print("Bom filme!")
 
-        
+            break
+
+        else:
+            print("\nCompra não autorizada!")
+            print(
+                f"O filme exige idade mínima de "
+                f"{filme_escolhido['classificacao']} anos."
+            )
+            print(
+                "Escolha outro filme adequado à sua idade."
+            )
+
+    except ValueError:
+        print("Entrada inválida. Digite um número inteiro.")

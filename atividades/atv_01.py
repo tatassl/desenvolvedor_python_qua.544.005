@@ -6,7 +6,7 @@ crie um programa que receba o nome, a massa em kg e a altura em metros do usuari
 import os
 os. system("cls" if os.name == "nt" else "clear")
 
-print("Seja BEM-VINDO!")
+print("=========Seja BEM-VINDO!=========")
 
 try:
     nome = input("Informe seu NOME: ")
