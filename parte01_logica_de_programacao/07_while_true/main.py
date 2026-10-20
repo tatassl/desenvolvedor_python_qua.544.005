@@ -19,8 +19,8 @@ while True:
                 print(f"{aluno} está de REPROVADO(A)")
         else:
             print("Nota inválida")
-    
-
+    except Exception as e:
+        print(f"Não foi possível calcular a média. {e}.")
     continuar = input("Deseja inserir outra nota? 'sim' para prosseguir. Qualquer outo valor para encerrar: ").strip().lower()
 
     if continuar == "sim":
