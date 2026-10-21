@@ -15,6 +15,7 @@ while True:
                 print(f"{aluno} está APROVADO(A).")
             elif nota >= 5:
                 print(f"{aluno} está de RECUPERAÇÃO.")
+                
             else:
                 print(f"{aluno} está de REPROVADO(A)")
         else:
