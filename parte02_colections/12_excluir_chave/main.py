@@ -19,3 +19,4 @@ del usuario[chave_escolhida]
 # re-exibe o novo dicionario 
 for chave, valor in usuario.items():
     print(f"{chave}: {valor}")
+    

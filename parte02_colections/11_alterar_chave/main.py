@@ -19,7 +19,7 @@ while True:
     # verifica se a chave é valida 
     if chave_escolhida:
         # informa o valor 
-        usuario[chave_escolhida] = input("Infome o novo valor: ").strip()
+        usuario[chave_escolhida] = input("Informe o novo valor: ").strip()
         continue
     else:
         break
