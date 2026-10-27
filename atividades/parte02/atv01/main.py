@@ -77,7 +77,7 @@ while True:
             if prosseguir == "s":
                 os.system("cls" if os.name == "nt" else "clear")
                 arquivo = input("Informe o nome do arquivo: ").strip()
-                with open(f"parte01/{arquivo}.json","w",encoding="utf-8") as f:
+                with open(f"atv01/{arquivo}.json","w",encoding="utf-8") as f:
                     json.dump(usuarios, f)
                 print("Arquivo json GRAVADO COM SUCESSO!")
                 continue
@@ -88,7 +88,7 @@ while True:
             os.system("cls" if os.name == "nt" else "clear")
             try:
                 abrir = input("Informe o nome do arquivo que deseja abrir: ").strip()
-                with open(f"parte01/{abrir}.json", "r", encoding="utf-8") as f:
+                with open(f"atv01/{abrir}.json", "r", encoding="utf-8") as f:
                     usuarios = json.load(f)
                 for usuario in usuarios:
                     for chave, valor in usuario.items():
