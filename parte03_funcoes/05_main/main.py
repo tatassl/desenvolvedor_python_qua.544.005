@@ -1,0 +1,21 @@
+# biblioteca 
+import math 
+import os 
+
+# funções
+def raiz(n):
+    return math.sqrt(n)
+
+def limpar():
+    os.system("cls" if os.name == "nt" else "clear")
+
+# algoritmo principal 
+def main():
+    limpar()
+    n = int(input("Informe um numero inteiro: "))
+    print(f"Raiz de {n} é {raiz(n)}.")
+
+
+# algoritmo principal protegido 
+if __name__ == "__main__":
+    main()
