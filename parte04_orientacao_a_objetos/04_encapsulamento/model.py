@@ -16,7 +16,7 @@ class Pessoa:
     def nome(self, nome):
         self.__nome = nome 
 
-    @property
+    @property #
     def idade(self):
         return self.__idade
 
