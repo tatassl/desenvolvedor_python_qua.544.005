@@ -5,7 +5,7 @@ def main():
 
     usuario.nome = input("Informe o nome: ").strip().title()
     usuario.idade = int(input("Informe a idade: "))
-    usuario.cpf = input("Informe p CPF: ").strip()
+    usuario.cpf = input("Informe o CPF: ").strip()
     usuario.telefone =input("Informe o telefone: ").strip()
     usuario.email = input("Informe o e-mail: ").strip().lower()
 
