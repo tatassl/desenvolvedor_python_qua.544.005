@@ -35,6 +35,8 @@ while True:
             gravidade = 11.15
         case "Lua":
             gravidade = 1.6
+        case "Terra":
+            gravidade = 9.8 
         case _: 
             print("Digite um nome válido!")
             continue 
