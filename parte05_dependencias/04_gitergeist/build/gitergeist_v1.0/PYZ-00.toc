@@ -1,5 +1,5 @@
 ('C:\\Users\\ALUNO\\Thauane Maria '
- 'S\\Workspaces\\Python\\desenvolvedor_python_qua.544.005\\parte05_dependencias\\04_gitergeist\\build\\gittata\\PYZ-00.pyz',
+ 'S\\Workspaces\\Python\\desenvolvedor_python_qua.544.005\\parte05_dependencias\\04_gitergeist\\build\\gitergeist_v1.0\\PYZ-00.pyz',
  [('__future__',
    'C:\\Program Files\\Python314\\Lib\\__future__.py',
    'PYMODULE'),
